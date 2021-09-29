@@ -1,3 +1,22 @@
+/*
+
+Trabalho versão 02 RASCUNHO (Tivemos muita dificuldade em fazer esse trabalho, por isso acabamos fazendo varios códigos)
+
+Sérgio Glésio de Oliveira Júnior - 2011671
+
+Gustavo Alves Cardoso Segantini - 2010012
+
+Ana Beatriz Ferreira Pessoa - 2011475
+
+João Cândido de Jesus Neto - 2011321
+
+João Victor de Macêdo Santos - 2010983
+*/
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
