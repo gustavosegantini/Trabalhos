@@ -1,3 +1,22 @@
+/*
+
+Trabalho versão 01 (Tivemos muita dificuldade em fazer esse trabalho, por isso acabamos fazendo varios códigos)
+
+Sérgio Glésio de Oliveira Júnior - 2011671
+
+Gustavo Alves Cardoso Segantini - 2010012
+
+João Cândido de Jesus Neto - 2011321
+
+João Victor de Macêdo Santos - 2010983
+
+*/
+
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -36,13 +55,40 @@ int pegarTamanho(Conta *conta);
 
 int main() {
     
+    int varDia, varMes, varAno, i=1;
+    double varPreco;
     Conta *minhaConta = novaConta();
     
-    novoItemPrimeiro(40, 32.21, 1, 1, minhaConta);
+    while (i == 1) {
+        
+        printf("Digita o dia: ");
+        scanf("%d", &varDia);
+        
+        printf("Digita o mes: ");
+        scanf("%d", &varMes);
+        
+        printf("Digita o ano: ");
+        scanf("%d", &varAno);
+        
+        printf("Digita o preco: ");
+        scanf("%lf", &varPreco);
+        
+        novoItemPrimeiro(varDia, varMes, varAno, varPreco, minhaConta);
+        
+        printf("Digite 1 para adicionar outro valor ou 2 para sair: ");
+        scanf("%d", &i);
+    }
+
+
+    
+    
+   /*
     novoItemPrimeiro(85, 12.21, 1, 1, minhaConta);
     novoItemPrimeiro(5, 87.41, 1, 1, minhaConta);
     novoItemPrimeiro(74, 96.21, 1, 1, minhaConta);
     novoItemPrimeiro(10, 2.21, 1, 1, minhaConta);
+    */
+
     printList(minhaConta);
     printf("\n Tamanho da Conta: %d\n", pegarTamanho(minhaConta));
     
@@ -59,24 +105,24 @@ int main() {
 }
 
 Dividas* novaDivida(int dia, int mes, int ano, double preco) {
-    Dividas *novaDivida = (Dividas *) malloc(sizeof(Dividas));
+    Dividas *nova = (Dividas *) malloc(sizeof(Dividas));
     
-    novaDivida->dia = dia;
-    novaDivida->mes = mes;
-    novaDivida->ano = ano;
-    novaDivida->preco = preco;
-    novaDivida->proximo = NULL;
+    nova->dia = dia;
+    nova->mes = mes;
+    nova->ano = ano;
+    nova->preco = preco;
+    nova->proximo = NULL;
     
-    return novaDivida;
+    return nova;
 }
 
 Conta* novaConta() {
-    Conta *novaD = (Conta *) malloc(sizeof(Conta));
+    Conta *novaC = (Conta *) malloc(sizeof(Conta));
     
-    novaD->primeiro = NULL;
-    novaD->size = 0;
+    novaC->primeiro = NULL;
+    novaC->size = 0;
     
-    return novaConta();
+    return novaC;
 }
 
 bool VerificadorVazio(Conta *conta) {
@@ -168,13 +214,15 @@ void removerItemUltimo(Conta *conta) {
         conta->size--;
     }
 }
-
+/*
+ 
+ */
 void buscarDividas(Conta *conta, int index) {
     
     if (VerificadorVazio(conta)) {
         printf("\n Lista nao contem produtos \n");
     } else if(index <= 0 || index > pegarTamanho(conta)) {
-        printf("\n Indice %d informado fora dos limites \n", index);
+       // printf("\n Indice %d informado fora dos limites \n", index);
     }
     else {
         Dividas *dividas = conta->primeiro;
