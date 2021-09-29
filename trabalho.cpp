@@ -6,6 +6,8 @@ Sérgio Glésio de Oliveira Júnior - 2011671
 
 Gustavo Alves Cardoso Segantini - 2010012
 
+Ana Beatriz Ferreira Pessoa - 2011475
+
 João Cândido de Jesus Neto - 2011321
 
 João Victor de Macêdo Santos - 2010983
